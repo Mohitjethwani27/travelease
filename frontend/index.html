@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the world with our Travel App. Find destinations, plan trips, and more!">
+    <meta name="keywords" content="travel, tourism, destinations, flights, hotels">
+    <meta name="author" content="Your Name">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+
+    <!-- Firebase SDK (optional, if needed in HTML) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyDiWQM6iqbltYlgkMr4cOl0Nz0VtUpGr5U",
+          authDomain: "traveease-648e5.firebaseapp.com",
+          projectId: "traveease-648e5",
+          storageBucket: "traveease-648e5.firebasestorage.app",
+          messagingSenderId: "93771171791",
+          appId: "1:93771171791:web:60cfb74803cbc785f3b4ba",
+          measurementId: "G-G2SJWTEN4V"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

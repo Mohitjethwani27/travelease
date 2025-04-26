@@ -1,0 +1,43 @@
+/* Beach Container */
+.beach-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Beach Card Wrapper */
+.beach {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    align-items: center;
+}
+
+/* Destination Cards */
+.destination-card {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-color: white; /* Ensure cards stand out */
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+/* Arrow Button */
+.beach-container .MuiIconButton-root {
+    background-color: #eee;
+    transition: background-color 0.3s;
+}
+
+.beach-container .MuiIconButton-root:hover {
+    background-color: #ddd;
+}
+
+/* Optional: Add a soft beach gradient background */
+.beach-container {
+
+    border-radius: 10px;
+}

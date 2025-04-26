@@ -1,0 +1,46 @@
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns items at the top */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    padding: 20px;
+    background-color: #f8f8f8; /* Optional: Background color for better visibility */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Centers logo and text horizontally */
+    text-align: center;
+    margin-top: 0;
+    max-width: 200px; /* Prevents logo section from stretching too wide */
+}
+
+.logo p {
+    margin-top: 5px; /* Slightly increased spacing for better readability */
+    padding: 0;
+    font-size: 14px; /* Adjust text size for better readability */
+    color: #555; /* Optional: Subtle text color */
+}
+
+.logo img, 
+.logo svg {
+    display: block; /* Ensures proper spacing */
+    margin-bottom: 5px; /* Added small margin for better spacing */
+    padding-bottom: 0;
+    width: 100px; /* Set a fixed width for consistency */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        align-items: center; /* Center align items */
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 100%; /* Allow full width on smaller screens */
+    }
+}

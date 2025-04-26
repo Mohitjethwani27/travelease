@@ -1,0 +1,59 @@
+/* Historical Page Styling */
+.historical-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Quote Section */
+.quote {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #8B0000; /* Deep red, giving a historical touch */
+    background-color: #FFD700; /* Golden, representing heritage */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Destination Card Styling */
+.destination-card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.destination-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Historical-Themed Background */
+body {
+    background-color: #F5F5DC; /* Light beige for a historical theme */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .historical-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .historical-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .historical-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row on mobile screens */
+    }
+}

@@ -1,0 +1,116 @@
+.textandimage {
+  display: flex;
+  margin-top: 35px;
+}
+
+.text {
+  width: 50%;
+  font-size: 24px; /* Adjust this value as needed */
+  line-height: 1.5; /* Improves readability */
+}
+
+.image {
+  display: flex;
+  width: 50%;
+  gap: 40px;
+}
+
+.image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.searchbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adds space below images */
+}
+.frontpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search{
+  width:100%;
+  margin-right:500px;
+  margin-top:30px ;
+}
+.frontpage{
+  margin-top: 80px;
+}
+.serve{
+  margin-top: 30px;
+  display: flex;
+}
+.serve h2{
+  margin-top: 90px ;
+} 
+.cards 
+{
+  display: flex;
+ 
+}
+.tour {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Forces everything to the left */
+  width: 100% !important;
+  padding-left: 5% !important; /* Adjust spacing */
+  margin-top: 100px !important;
+}
+
+.tour .text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Ensures inner content is left-aligned */
+}
+
+
+/* Container holding the text and image */
+.expierence {
+  display: flex !important; /* Enables flexbox for horizontal alignment */
+  align-items: center !important; /* Aligns items vertically in the center */
+  justify-content: space-between !important; /* Places text on the left and image on the right */
+  margin-top: 5% !important; /* Adds space above the section */
+  width: 100% !important; /* Ensures full-width layout */
+}
+
+/* Text section (left side) */
+.expierence-text {
+  width: 50% !important; /* Takes up 50% of the container width */
+  text-align: left !important; /* Ensures text is aligned to the left */
+  margin-left: 0 !important; /* Ensures text is positioned at the start */
+}
+
+/* Image section (right side) */
+.expierence-image {
+  width: 50% !important; /* Takes up 50% of the container width */
+  display: flex !important; /* Enables flexbox for the image */
+  justify-content: flex-end !important; /* Pushes the image to the right */
+margin-right: 10%;
+margin-top: 50px;
+}
+
+/* Image styling */
+.expierence-image img {
+  width: 1000px !important; /* Ensures image does not exceed its container */
+  height: auto !important; /* Maintains aspect ratio */
+  border-radius: 10px !important; /* Optional: Adds rounded corners to the image */
+}
+.gallery{
+margin-top: 10%;
+width: 100%;
+
+}
+.review{
+  width: 100%;
+  margin-top: 60px;
+}
+.review h2{
+  margin-bottom:0px;
+}
+
+h2{
+  margin: left 0px !important;;
+}

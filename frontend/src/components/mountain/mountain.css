@@ -1,0 +1,43 @@
+/* Historical Container */
+.historical-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Historical Card Wrapper */
+.historical {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    align-items: center;
+}
+
+/* Destination Cards */
+.destination-card {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-color: white;
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+/* Arrow Button */
+.historical-container .MuiIconButton-root {
+    background-color: #eee;
+    transition: background-color 0.3s;
+}
+
+.historical-container .MuiIconButton-root:hover {
+    background-color: #ddd;
+}
+
+/* Classic & Elegant Background */
+.historical-container {
+  
+    border-radius: 10px;
+}

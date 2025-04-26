@@ -1,0 +1,156 @@
+/* Navbar Style */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 80px; /* Adjust height as per your preference */
+    padding: 0 20px; /* Adds some space on the left and right */
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;  /* Vertically center the logo */
+    margin-top: 25px !important; /* Adjust top margin to align vertically */
+    height: fit-content;
+}
+
+/* Navbar Links Container */
+.navcontainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%; /* Adjust width for more balance */
+    align-items: center;
+}
+
+/* Styling the navigation links */
+.nav-link {
+    color: black !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+/* Button Container */
+.button {
+    display: flex;
+    align-items: center; /* Vertically center buttons */
+    gap: 20px;  /* Adds spacing between buttons */
+    margin-right: 3%;
+}
+/* Styling for buttons */
+.button button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center; /* Ensures buttons align horizontally */
+}
+
+/* Styling for Login Button */
+.button button:nth-child(1) {
+    background-color: #f4f4f4;
+}
+
+.button button:nth-child(1):hover {
+    background-color: #ddd;
+}
+
+/* Styling for Register Button */
+.button button:nth-child(2) {
+    background-color: orange;
+}
+
+.button button:nth-child(2):hover {
+    background-color: darkorange;
+}
+
+/* Styling for Logout Button */
+.button button:nth-child(3) {
+    background-color: red;
+}
+
+.button button:nth-child(3):hover {
+    background-color: darkred;
+}
+
+/* Styling for "Hello, [Name]" */
+.button h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    position: relative; /* Ensures dropdown menu is placed relative to this element */
+}
+
+/* Adjust the position of the account logo to shift left */
+.profile-dropdown button {
+    margin-right: 10px; /* Move the account logo slightly left */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    position: absolute;
+    top: 50px;  /* Adjust to control dropdown position below the account button */
+    right:20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 120px; /* Reduced width of the dropdown */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Buttons take up full width */
+    z-index: 10; /* Ensures dropdown appears above other elements */
+}
+
+/* Dropdown button styles */
+.dropdown-menu button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    width: 100%; /* Make buttons take up full width */
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mobile responsiveness (for screens smaller than 768px) */
+@media (max-width: 768px) {
+    .navcontainer {
+        display: none;  /* Hide links on small screens */
+    }
+
+    .button {
+        gap: 10px;
+        margin-right: 15px;
+    }
+
+    .navbar {
+        padding: 0 10px; /* Adjust padding on smaller screens */
+        height: 70px;  /* Reduced height for mobile view */
+    }
+}
+

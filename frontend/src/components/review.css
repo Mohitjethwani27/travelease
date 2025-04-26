@@ -1,0 +1,44 @@
+.place-img {
+    width: 100%;
+    height: 200px;           /* Fixed height for all images */
+    object-fit: cover;       /* Crop the image to fit the box nicely */
+    border-radius: 10px;
+    display: block;
+    background-color: #eee;  /* Optional: fallback color if image is loading */
+  }
+  
+  
+  .user-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    height: 100%;  /* Make sure Swiper cards align evenly */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+  .review-text {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  

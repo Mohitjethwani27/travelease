@@ -1,0 +1,14 @@
+.box {
+    border: orange solid;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: orange;
+    display: inline-flex; /* Change to flex to enable centering */
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    text-align: center;
+    max-width: fit-content;
+    height: auto;
+    white-space: nowrap;
+    padding: 10px 20px; /* Optional: adds spacing around the text */
+}
