@@ -1,14 +1,13 @@
 .box {
-    border: orange solid;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     background-color: orange;
-    display: inline-flex; /* Change to flex to enable centering */
-    justify-content: center; /* Horizontal centering */
-    align-items: center;     /* Vertical centering */
-    text-align: center;
-    max-width: fit-content;
-    height: auto;
-    white-space: nowrap;
-    padding: 10px 20px; /* Optional: adds spacing around the text */
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* adjust as needed */
+    width: 150px; /* adjust as needed */
+    border-radius: 8px; /* optional: keeps the rounded edges */
+    font-size: 24px; /* adjust text size */
+    font-weight: bold;
+    color: #1f2937; /* or whatever dark color you are using */
+  }
+  

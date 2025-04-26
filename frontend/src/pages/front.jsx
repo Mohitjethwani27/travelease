@@ -59,6 +59,7 @@ export default function Frontpage()
               <div className="text">
         
           <h2>Our Featured tours</h2>
+          
           </div>
         
          <div className="destination" >
@@ -70,7 +71,7 @@ export default function Frontpage()
          <div className="expierence">
             <div className="expierence-text">
         
-        <h2 style={{fontSize:"30px"}}>With All Our Expierence <br></br>We Will Serve You</h2>
+        <h2 >With All Our Expierence <br></br>We Will Serve You</h2>
         <Box value={"12k+"}/> &nbsp; &nbsp; &nbsp;&nbsp;
         <Box value={"2k+"}/> &nbsp; &nbsp; &nbsp; &nbsp;
         <Box value={"15+"}/> &nbsp; &nbsp; &nbsp; &nbsp;

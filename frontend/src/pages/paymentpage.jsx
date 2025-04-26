@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import QRCode from "react-qr-code";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  FormControlLabel,
-  Checkbox,
-} from "@mui/material";
+import { Box, Typography, Card, CardContent, FormControlLabel, Checkbox } from "@mui/material";
 
 export default function PaymentPage() {
   const location = useLocation();
@@ -60,43 +53,61 @@ export default function PaymentPage() {
       return;
     }
   
-    // 1) Build an array of selected service names
-    const svcObj = bookingDetails.services || {};
-    const selectedServices = [];
-    if (svcObj.insurance) selectedServices.push("Travel Insurance");
-    if (svcObj.guide)     selectedServices.push("Special Guide");
-    if (svcObj.meal)      selectedServices.push("Meal Preferences");
-  
-    // 2) POST the booking (with services array) to your backend
     try {
+      const svcObj = bookingDetails.services || {};
+      const selectedServices = [];
+  
+      if (svcObj.insurance) selectedServices.push("Travel Insurance");
+      if (svcObj.guide) selectedServices.push("Special Guide");
+  
+      if (svcObj.meal) {
+        if (svcObj.meal === "veg") {
+          selectedServices.push("Vegetarian Meal");
+        } else if (svcObj.meal === "non-veg") {
+          selectedServices.push("Non-Vegetarian Meal");
+        } else {
+          selectedServices.push("Meal Preferences");
+        }
+      }
+  
+      const bookingPayload = {
+        name: bookingDetails.name,
+        image: bookingDetails.image,
+        price: bookingDetails.price,
+        packageType: bookingDetails.packageType,
+        date: bookingDetails.date,
+        adults: bookingDetails.adults,
+        children: bookingDetails.children,
+        transactionID,
+        userId: bookingDetails.userId,
+        services: selectedServices,
+      };
+  
       const resp = await fetch("http://localhost:3000/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...bookingDetails,
-          services: selectedServices,
-          transactionID,
-        }),
+        body: JSON.stringify(bookingPayload),
       });
+  
       if (!resp.ok) throw new Error("Booking API failed");
   
-      // 3) On success, show confirmation and redirect
       setPaymentSuccess(true);
+  
       setTimeout(() => {
         navigate("/bookingconfirmation", {
           state: {
-            ...bookingDetails,
-            transactionID,
-            services: selectedServices
+            ...bookingPayload,
           },
         });
       }, 2000);
+  
     } catch (err) {
       console.error("🚨 Booking POST failed:", err);
       setError("Failed to save your booking. Please try again.");
     }
   };
   
+
   return (
     <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
       <Card sx={{ maxWidth: 400, width: "100%", padding: 3, textAlign: "center" }}>
