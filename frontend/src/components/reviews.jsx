@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "./reviews.css";
 
 import Review from "./review_card";
+import { Directions } from "@mui/icons-material";
 
 export default function Reviews() {
   const reviews = [
@@ -50,6 +51,7 @@ export default function Reviews() {
   return (
     <div className="reviews-container">
       <Swiper
+      
         slidesPerView={3}
         spaceBetween={30}
         loop={true}

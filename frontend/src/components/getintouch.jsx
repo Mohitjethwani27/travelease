@@ -10,10 +10,10 @@ function GetInTouch() {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_c94otfj',
-      'template_c6u70og',
+      'service_c94otfj',      // service ID
+      'template_c6u70og',     // template ID
       form.current,
-      'qaSHayWWsFF9QS146'
+      'qaSHayWWsFF9QS146'     // public key
     )
     .then((result) => {
       console.log(result.text);
@@ -55,67 +55,65 @@ function GetInTouch() {
           </Button>
         </form>
       </Paper>
+
+      {/* Contact Information */}
       <Grid container spacing={3} sx={{ marginTop: 4, justifyContent: 'center' }}>
-  {/* Email */}
-  <Grid item xs={12} sm={4}>
-    <Box display="flex" alignItems="center" justifyContent="center">
-      <Email sx={{ marginRight: 1, color: '#FFA500' }} />
-      <Typography
-        variant="body1"
-        component="a"
-        href="mailto:contact@travelease.com"
-        sx={{
-          textDecoration: 'none',
-          color: 'inherit',
-          '&:hover': { textDecoration: 'underline' }
-        }}
-      >
-        contact@travelease.com
-      </Typography>
-    </Box>
-  </Grid>
+        <Grid item xs={12} sm={4}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Email sx={{ marginRight: 1, color: '#FFA500' }} />
+            <Typography
+              variant="body1"
+              component="a"
+              href="mailto:contact@travelease.com"
+              sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': { textDecoration: 'underline' }
+              }}
+            >
+              contact@travelease.com
+            </Typography>
+          </Box>
+        </Grid>
 
-  {/* Phone */}
-  <Grid item xs={12} sm={4}>
-    <Box display="flex" alignItems="center" justifyContent="center">
-      <Phone sx={{ marginRight: 1, color: '#FFA500' }} />
-      <Typography
-        variant="body1"
-        component="a"
-        href="tel:+1234567890"
-        sx={{
-          textDecoration: 'none',
-          color: 'inherit',
-          '&:hover': { textDecoration: 'underline' }
-        }}
-      >
-        +1 234 567 890
-      </Typography>
-    </Box>
-  </Grid>
+        <Grid item xs={12} sm={4}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Phone sx={{ marginRight: 1, color: '#FFA500' }} />
+            <Typography
+              variant="body1"
+              component="a"
+              href="tel:+1234567890"
+              sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': { textDecoration: 'underline' }
+              }}
+            >
+              +1 234 567 890
+            </Typography>
+          </Box>
+        </Grid>
 
-  {/* Location */}
-  <Grid item xs={12} sm={4}>
-    <Box display="flex" alignItems="center" justifyContent="center">
-      <LocationOn sx={{ marginRight: 1, color: '#FFA500' }} />
-      <Typography
-        variant="body1"
-        component="a"
-        href="https://www.google.com/maps/search/?api=1&query=Kota,+Rajasthan"
-        target="_blank"
-        rel="noopener noreferrer"
-        sx={{
-          textDecoration: 'none',
-          color: 'inherit',
-          '&:hover': { textDecoration: 'underline' }
-        }}
-      >
-        KOTA, RAJASTHAN
-      </Typography>
-    </Box>
-  </Grid>
-</Grid>
-
+        <Grid item xs={12} sm={4}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <LocationOn sx={{ marginRight: 1, color: '#FFA500' }} />
+            <Typography
+              variant="body1"
+              component="a"
+              href="https://www.google.com/maps/search/?api=1&query=Kota,+Rajasthan"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': { textDecoration: 'underline' }
+              }}
+            >
+              KOTA, RAJASTHAN
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 }

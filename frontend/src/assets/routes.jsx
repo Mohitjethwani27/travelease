@@ -15,6 +15,7 @@ import BookingConfirmation from "../pages/bookingconfirmation";
 import Dashboard from "../pages/dashboard";
 import Profile from "../pages/profile";
 import MyBookings from "../pages/mybookings";
+import BookingDetails from "../pages/BookingDetails";
 function AppRoutes() {
 
   return (
@@ -33,11 +34,14 @@ function AppRoutes() {
       <Route path="/profile" element={<Profile />}/>
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/mybookings" element={<MyBookings/>} />
+      <Route path="/booking/:name" element={<BookingPage />} />
+      <Route path="/mybookings/:id" element={<BookingDetails />} />
+
 
   
       
       {/* Add the dynamic route for BookingPage */}
-      <Route path="/booking/:name" element={<BookingPage />} />
+     
     </Routes>
   );
 }

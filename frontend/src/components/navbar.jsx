@@ -1,14 +1,17 @@
-import React, { useState, useRef } from "react";
+//handle logout and other navbar conetnt ensure if user logged in then change navbar
+
+
+import React, { useState } from "react";
 import "./navbar.css";
 import Logo from "../assets/logo";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // ⬅️ added useNavigate
 import { useUser } from "../assets/userstate";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { toast } from 'react-toastify';
 
-
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate(); // ⬅️ initialize navigate
   const { user, logoutUser } = useUser();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -20,11 +23,14 @@ export default function Navbar() {
   };
 
   const handleLogout = () => {
-    logoutUser(); // from useUser()
     setDropdownOpen(false);
     toast.success("Logged out successfully!");
-  };
   
+    setTimeout(() => {
+      logoutUser();    // first, clear the user session
+      navigate('/');   // then navigate to Home after logout
+    }, 1500); // wait 1.5 seconds before actually logging out + navigating
+  };
 
   const closeDropdown = () => setDropdownOpen(false);
 
@@ -73,12 +79,11 @@ export default function Navbar() {
 
               {dropdownOpen && (
                 <div className="dropdown-menu">
-                  <Link to="/dashboard">
-                    <button onClick={closeDropdown}>Dashboard</button>
-                  </Link>
+                 
                   <Link to="/profile">
                     <button onClick={closeDropdown}>My Profile</button>
                   </Link>
+                 
                   <button onClick={handleLogout} style={{ backgroundColor: "red", color: "white" }}>
                     Logout
                   </button>

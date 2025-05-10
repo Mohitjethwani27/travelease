@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import QRCode from "react-qr-code";
 import { Box, Typography, Card, CardContent, FormControlLabel, Checkbox } from "@mui/material";
@@ -54,34 +54,36 @@ export default function PaymentPage() {
     }
   
     try {
+      console.log("👉 Preparing booking details for backend...", bookingDetails);
+  
       const svcObj = bookingDetails.services || {};
       const selectedServices = [];
   
       if (svcObj.insurance) selectedServices.push("Travel Insurance");
       if (svcObj.guide) selectedServices.push("Special Guide");
   
-      if (svcObj.meal) {
-        if (svcObj.meal === "veg") {
-          selectedServices.push("Vegetarian Meal");
-        } else if (svcObj.meal === "non-veg") {
-          selectedServices.push("Non-Vegetarian Meal");
-        } else {
-          selectedServices.push("Meal Preferences");
-        }
+      if (svcObj.mealType === "veg") {
+        selectedServices.push("Vegetarian Meal");
+      } else if (svcObj.mealType === "non-veg") {
+        selectedServices.push("Non-Vegetarian Meal");
       }
   
       const bookingPayload = {
         name: bookingDetails.name,
         image: bookingDetails.image,
-        price: bookingDetails.price,
+        price: Number(bookingDetails.price),
         packageType: bookingDetails.packageType,
         date: bookingDetails.date,
         adults: bookingDetails.adults,
         children: bookingDetails.children,
+        adultDetails: bookingDetails.adultDetails || [],
+        childrenDetails: bookingDetails.childrenDetails || [],
         transactionID,
         userId: bookingDetails.userId,
         services: selectedServices,
       };
+  
+      console.log("📦 Final Booking Payload being sent:", bookingPayload);
   
       const resp = await fetch("http://localhost:3000/api/bookings", {
         method: "POST",
@@ -89,7 +91,13 @@ export default function PaymentPage() {
         body: JSON.stringify(bookingPayload),
       });
   
-      if (!resp.ok) throw new Error("Booking API failed");
+      const result = await resp.json(); // <-- important: parse response to check server reply
+  
+      console.log("📬 Server response:", result);
+  
+      if (!resp.ok) {
+        throw new Error(result.message || "Booking API failed");
+      }
   
       setPaymentSuccess(true);
   
@@ -102,8 +110,8 @@ export default function PaymentPage() {
       }, 2000);
   
     } catch (err) {
-      console.error("🚨 Booking POST failed:", err);
-      setError("Failed to save your booking. Please try again.");
+      console.error("🚨 Error during booking POST:", err);
+      setError(err.message || "Failed to save your booking. Please try again.");
     }
   };
   

@@ -19,7 +19,9 @@ export default function Frontpage()
      <div className="frontpage">
         <div className="textandimage">
         <div className="text">
-        <h2>Travelling opens the door to creating memories</h2>
+        <h2>Travelling opens the door to creating <span style={{ color: 'orange' }}>memories</span></h2>
+
+
         <p>
   Discover <strong>new places</strong>, connect with <strong>diverse people</strong>, and immerse yourself in <strong>different cultures</strong>. Every trip turns into a unique story, rich with <strong>adventure</strong>, filled with <strong>laughter</strong>, and packed with unforgettable <strong>moments</strong>.
 </p>
@@ -69,12 +71,23 @@ export default function Frontpage()
          </div>
          
          <div className="expierence">
-            <div className="expierence-text">
+            <div className="text">
         
         <h2 >With All Our Expierence <br></br>We Will Serve You</h2>
-        <Box value={"12k+"}/> &nbsp; &nbsp; &nbsp;&nbsp;
-        <Box value={"2k+"}/> &nbsp; &nbsp; &nbsp; &nbsp;
-        <Box value={"15+"}/> &nbsp; &nbsp; &nbsp; &nbsp;
+        <div className="boxes">
+  <div className="box-with-text">
+    <Box value={"12k+"} />
+    <p>Successful Trips</p>
+  </div>
+  <div className="box-with-text">
+    <Box value={"2k+"} />
+    <p>Regular Clients</p>
+  </div>
+  <div className="box-with-text">
+    <Box value={"15+"} />
+    <p>Years Experience</p>
+  </div>
+</div>
 
        </div>
        
@@ -86,14 +99,15 @@ export default function Frontpage()
           </div>
          
           <div className="gallery">
-           
-            <h2>Visit Our Customers Tour Gallery</h2>
+           <div className="text">          <h2>Visit Our Customers Tour Gallery</h2>
+           </div>
             <Images></Images>
 
           </div>
           <div className="review">
-            
+            <div className="text">
             <h2>  What Our Guests Are Saying About Us</h2>
+            </div>
             <Reviews></Reviews>
           </div>
           <div className="footer">

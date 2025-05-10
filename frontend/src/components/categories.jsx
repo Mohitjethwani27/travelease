@@ -39,4 +39,3 @@ function CategoryCard({ name, image }) {
     </div>
   );
 }
-``

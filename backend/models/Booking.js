@@ -10,14 +10,29 @@ const bookingSchema = new mongoose.Schema({
   adults:      Number,
   children:    Number,
 
-  // Was { insurance: Boolean, guide: Boolean, meal: Boolean }
-  services:    {
-    type: [String],      // now an array of service names
-    default: []          // if user selected none, empty array
+  services: {
+    type: [String],
+    default: [],
   },
 
   transactionID: String,
   userId:        String,
+
+  // 🧑‍🤝‍🧑 New: Adult Details
+  adultDetails: [
+    {
+      name: { type: String, required: true },
+      age:  { type: Number, required: true }
+    }
+  ],
+
+  // 🧒 New: Children Details
+  childrenDetails: [
+    {
+      name: { type: String, required: true },
+      age:  { type: Number, required: true }
+    }
+  ]
 });
 
 module.exports = mongoose.model("Booking", bookingSchema);

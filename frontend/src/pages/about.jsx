@@ -64,39 +64,45 @@ export default function About() {
 
     return (
         <div className="about">
-            <h1>Who We Are</h1>
-            <h2>
+            <div className="text">
+            <h2>Who We Are</h2>
+            </div>
+            <h3>
                 Welcome to Travel Ease, your ultimate travel companion! We are a modern travel
                 platform designed to make trip planning effortless, personalized, and exciting.
                 Whether you're looking for an adventurous getaway, a relaxing vacation, or a
                 cultural exploration, we’ve got you covered.
-            </h2>
-
-            <h1>What We Offer</h1>
+            </h3>
+            <div className="text">
+            <h2>What We Offer</h2>
+            </div>
             <AboutCard cards={offerings}></AboutCard>
 
             <br />
             <br />
             <br />
             <br />
-
-            <h1>Why Choose Us</h1>
+            <div className="text">
+            <h2>Why Choose Us</h2>
+            </div>
             <br />
             <AboutCard cards={choose} />
             <br />
             <br />
-
-            <h1>Our Mission</h1>
-            <h2>
+            <div className="text">
+            <h2>Our Mission</h2>
+            </div>
+            <h3>
                 We believe that travel is not just about visiting places—it's about creating
                 memories. Our goal is to provide seamless, enriching, and unforgettable travel
                 experiences for every explorer.
-            </h2>
+            </h3>
 
             {/* Get in Touch Section */}
             <br />
             <div className="contact us">
-                <h1>Get In Touch</h1>
+                <div className="text">
+                <h2>Get In Touch</h2></div>
                 <GetInTouch></GetInTouch>
             </div>
         </div>

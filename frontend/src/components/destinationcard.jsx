@@ -94,8 +94,9 @@ export default function DestinationCard({ location, rating, name, state, price, 
 
         {/* Price in INR */}
         <Typography variant="h6" color="primary" sx={{ mt: 1, fontWeight: "bold" }}>
-          {formattedPrice}
-        </Typography>
+  {formattedPrice} <Typography variant="caption" sx={{ color: "text.secondary", ml: 0.5 }}>(per person)</Typography>
+</Typography>
+
       </CardContent>
 
       {/* Book Now Button */}

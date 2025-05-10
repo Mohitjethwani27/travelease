@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../assets/userstate';
+import { useNavigate } from 'react-router-dom'; // <--- import useNavigate
 
 export default function MyBookings() {
   const { user } = useUser();
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // <--- initialize
 
   useEffect(() => {
     if (!user) return;
@@ -38,7 +40,7 @@ export default function MyBookings() {
   if (!user) return null;
   if (loading) return <p>Loading your bookings...</p>;
   if (error) return <p>{error}</p>;
-  if (bookings.length === 0) return <p>You have no bookings.</p>;
+  if (bookings.length === 0) return <p>You have no bookings yet.</p>;
 
   return (
     <div style={{ padding: '2rem' }}>
@@ -47,13 +49,20 @@ export default function MyBookings() {
         {bookings.map((booking) => (
           <div
             key={booking._id}
+            onClick={() => navigate(`/mybookings/${booking._id}`)}
+            
+// <--- go to booking details
             style={{
               width: '260px',
               borderRadius: '12px',
               overflow: 'hidden',
               boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-              backgroundColor: '#fff'
+              backgroundColor: '#fff',
+              cursor: 'pointer', // <--- make it look clickable
+              transition: 'transform 0.2s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
             <img
               src={booking.image || 'https://via.placeholder.com/260x160'}
@@ -75,13 +84,6 @@ export default function MyBookings() {
               </p>
               <p style={{ margin: '0.25rem 0', fontSize: '0.9rem' }}>
                 💰 {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(booking.price)}
-              </p>
-              <p style={{ margin: '0.25rem 0', fontSize: '0.9rem' }}>
-                🛎 Services:{' '}
-                {booking.services && booking.services.length > 0
-                  ? booking.services.join(', ')
-                  : 'None'
-                }
               </p>
             </div>
           </div>
